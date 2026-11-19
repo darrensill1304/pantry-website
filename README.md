@@ -10,4 +10,4 @@ The website for Pantry, a shared recipe book and meal planner for households on 
 - **Icons and the share image**: `sh scripts/make-images.sh` rebuilds `favicon.ico`, `apple-touch-icon.png` and `assets/og.png` from `assets/icon.svg` and `scripts/og.html`. Needs rsvg-convert, ImageMagick and Chrome.
 - **Screenshots**: `python3 -m http.server 8765` in one shell, then `sh scripts/screenshots.sh` writes `.screenshots/` (git-ignored).
 
-The colours, type and the three recipe covers come from the app's design system (`DESIGN.md`, `constants/theme.ts` and `components/RecipeCover.tsx` in the app repo).
+The colours, type and the hero's three generated covers come from the app's design system (`DESIGN.md`, `constants/theme.ts` and `components/RecipeCover.tsx` in the app repo). The recipe photos in `assets/` are small copies of the app's built-in recipe photos (`supabase/seed/curated-photos/` in the app repo, whose `sources.json` and README say where each came from and how they were made).
