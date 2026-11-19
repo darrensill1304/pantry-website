@@ -177,11 +177,11 @@
 <h3 id="everyone-who-uses-pantry">Everyone who uses Pantry</h3>
 <ul>
 <li><strong>Public recipes.</strong> When you mark a recipe Public, every signed-in Pantry user can find it on Explore, along with your display name and profile photo.</li>
-<li><strong>Your profile.</strong> Your display name and profile photo can be seen by any signed-in Pantry user, even if you never publish a recipe. Do not use a name or photo you want to keep private.</li>
-<li><strong>Photos are stored at public web addresses.</strong> Recipe photos and profile photos are stored at web addresses that anyone who has the address can open, without signing in. A recipe photo's address contains a long random code, so it cannot be guessed, but anyone you share it with, or anyone in your pantry, could pass it on.</li>
+<li><strong>Your profile.</strong> Other Pantry users see your display name and profile photo only if they share a pantry with you, or if you have a Public recipe on Explore. Someone who has blocked you also sees them in their list of blocked people.</li>
+<li><strong>Photos are stored at public web addresses.</strong> Recipe photos and profile photos are stored at web addresses that anyone who has the address can open, without signing in. Each address contains a long random code, so it cannot be guessed. Your profile photo's address is shared with the people who can see your profile, and a recipe photo's with the people who can see the recipe. Anyone they pass the address to can open the photo.</li>
 </ul>
 <h3 id="people-with-an-invite-code">People with an invite code</h3>
-<p>Anyone who has your pantry's invite code can see the pantry's name before joining, and can join it until the code expires (7 days) or is changed.</p>
+<p>Anyone who has your pantry's invite code can see the pantry's name and its owner's display name before joining, and can join it until the code expires (7 days) or is changed.</p>
 <h3 id="us">Us</h3>
 <p>We can see all data in Pantry's database when we need to: to fix a problem, to act on a report, or to answer your request. We review reported content by hand. We do not read your data for any other reason.</p>
 <h3 id="service-providers-processors">Service providers (processors)</h3>
@@ -201,7 +201,7 @@
 <ul>
 <li><strong>Your account and what you add:</strong> for as long as you have an account. When you delete your account, see the next section.</li>
 <li><strong>Things you delete in the app</strong> (a recipe, a list item, a planned meal) are removed from the live database straight away. Meal plans are not deleted: a finished plan is archived and stays in the pantry's history.</li>
-<li><strong>Recipe photos and profile photos</strong> are not yet deleted automatically when you delete your account or a pantry. We will delete them on request; email us.</li>
+<li><strong>Recipe photos and profile photos</strong> are deleted when you delete your account (see the next section). When you replace your profile photo, the old one is deleted. When you delete a pantry but keep your account, its recipes stay with the people who added them, photos included, and a photo can stay after its recipe is deleted. We will delete a photo on request; email us.</li>
 <li><strong>Failed invite-code attempts:</strong> about one hour.</li>
 <li><strong>Reports:</strong> until we have dealt with them, and then for 12 months. A report you made is deleted when you delete your account.</li>
 <li><strong>Backups:</strong> our Supabase plan keeps no automatic backups of the database, so deleted data does not linger in one. If that changes, we will update this policy.</li>
@@ -214,18 +214,18 @@
 <li>your account, email address, display name and unit preference;</li>
 <li>any pantry you own where you are the only member, and everything in it;</li>
 <li>recipes you created outside any pantry;</li>
+<li>your profile photo, and the photos of the recipes deleted with your account (yours, wherever they are, and those in the pantries deleted with it), unless a recipe that stays still uses the photo (see "Copies others have made");</li>
 <li>your likes, your blocks, and reports you made;</li>
 <li>your membership of every pantry.</li>
 </ul>
 <p><strong>Kept by the household.</strong> Things you added to a pantry shared with other people belong to that household, so they stay after you leave:</p>
 <ul>
-<li><strong>Recipes</strong> you added to someone else's pantry pass to that pantry's owner.</li>
+<li><strong>Recipes</strong> you added to someone else's pantry pass to that pantry's owner, with their photos.</li>
 <li><strong>Meal plans, planned meals, shopping lists, collections, staples, ticked-off items and the cook log</strong> stay in the pantry. They no longer show your name: they show no author.</li>
 <li><strong>Your cook log notes and ratings stay</strong> in the household's cook log, without your name. Any remaining member can then edit or delete them. If you want them gone, delete them before you delete your account.</li>
 </ul>
 <p><strong>Before you can delete your account:</strong> if you own a pantry that other people still use, you must first hand it to another member or delete it. This stops a household losing its data.</p>
-<p><strong>Copies others have made:</strong> if you made a recipe Public and another person liked it, deleting the recipe (or your account) leaves that person with a private copy of it.</p>
-<p><strong>Not yet deleted automatically:</strong> your profile photo and recipe photos stay at their web addresses until we remove them. Email us and we will.</p>
+<p><strong>Copies others have made:</strong> if you made a recipe Public and another person liked it, deleting the recipe (or your account) leaves that person with a private copy of it, photo included.</p>
 <h2 id="your-rights">Your rights</h2>
 <p>Under GDPR you have the right to:</p>
 <ul>
