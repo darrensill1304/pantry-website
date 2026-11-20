@@ -11,6 +11,7 @@
   --on-action: #ffffff;
   --today: #d70015;
   --todo: #ffe066;
+  --art-line: rgba(0, 0, 0, 0.07);
   --serif: ui-serif, "New York", "Iowan Old Style", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
   --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --gutter: clamp(16px, 5vw, 56px);
@@ -29,6 +30,7 @@
     --on-action: #1c1c1e;
     --today: #ff6961;
     --todo: #ffd60a;
+    --art-line: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -127,7 +129,7 @@ mark.todo::after { content: "]"; }
   .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
 }
 
-/* The app's first-run art: three generated covers, fanned (components/CoverFan.tsx). */
+/* The app's first-run art (three covers, fanned), here with the built-in recipes' photos (components/CoverFan.tsx). */
 .fan { container-type: inline-size; }
 .fan-stage { --w: min(190px, 30cqi); position: relative; height: calc(var(--w) * 1.62); }
 .fan .cover {
@@ -159,9 +161,17 @@ mark.todo::after { content: "]"; }
   background: url(grain.png) repeat; background-size: 128px;
   opacity: 0.3; mix-blend-mode: overlay;
 }
+
+/* A cover with a built-in recipe's photo: the photo under the title, darkened at the foot so the title reads. */
+.photo-cover > img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; }
+.photo-cover::after { z-index: -1; background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 50%); opacity: 1; mix-blend-mode: normal; }
 .cover.c1 { background-color: #C43B1E; background-image: linear-gradient(11deg, #47090De6 0%, #47090D59 42%, #47090D00 70%), radial-gradient(96% 68% at 0% 104%, #47090Dff 36.6%, #47090Dd6 52.4%, #47090D7f 68.3%, #47090D29 84.1%, #47090D00 100%), radial-gradient(68.19% 57.64% at 102.69% 75.94%, #9D1D39fa 17.4%, #9D1D39d2 38.0%, #9D1D397d 58.7%, #9D1D3928 79.3%, #9D1D3900 100%), radial-gradient(64.49% 48.64% at 54.91% 56.58%, #E84F2Fef 8.1%, #E84F2Fc9 31.1%, #E84F2F77 54.0%, #E84F2F26 77.0%, #E84F2F00 100%), radial-gradient(43.08% 37.39% at 89.45% 4.38%, #FFC37D73 0.0%, #FFC37D61 3.1%, #FFC37D3a 35.4%, #FFC37D12 67.7%, #FFC37D00 100%), radial-gradient(78.97% 60.63% at 88.50% 5.09%, #F48E3Bfe 25.5%, #F48E3Bd5 44.1%, #F48E3B7f 62.8%, #F48E3B29 81.4%, #F48E3B00 100%), radial-gradient(76.25% 58.77% at 9.71% 24.66%, #D92F2Bfd 23.0%, #D92F2Bd5 42.2%, #D92F2B7f 61.5%, #D92F2B29 80.7%, #D92F2B00 100%); }
 .cover.c2 { background-color: #7DA152; background-image: linear-gradient(11deg, #142B14e6 0%, #142B1459 42%, #142B1400 70%), radial-gradient(96% 68% at 0% 104%, #142B14ff 36.6%, #142B14d6 52.4%, #142B147f 68.3%, #142B1429 84.1%, #142B1400 100%), radial-gradient(71.61% 60.21% at 100.06% 78.12%, #3A6933fd 21.1%, #3A6933d4 40.8%, #3A69337e 60.6%, #3A693328 80.3%, #3A693300 100%), radial-gradient(60.83% 46.48% at 42.42% 53.23%, #C5CB7Fe4 3.1%, #C5CB7Fc0 27.3%, #C5CB7F72 51.5%, #C5CB7F25 75.8%, #C5CB7F00 100%), radial-gradient(43.20% 37.46% at 20.13% 12.30%, #FAEEC674 0.0%, #FAEEC662 3.3%, #FAEEC63a 35.5%, #FAEEC613 67.8%, #FAEEC600 100%), radial-gradient(71.42% 55.70% at 1.39% 6.00%, #EFD897fb 18.2%, #EFD897d3 38.6%, #EFD8977e 59.1%, #EFD89728 79.5%, #EFD89700 100%), radial-gradient(69.63% 54.46% at 88.32% 20.39%, #9BBB5Dfa 16.2%, #9BBB5Dd2 37.1%, #9BBB5D7d 58.1%, #9BBB5D28 79.0%, #9BBB5D00 100%); }
 .cover.c3 { background-color: #DE8A1F; background-image: linear-gradient(11deg, #470B05e6 0%, #470B0559 42%, #470B0500 70%), radial-gradient(96% 68% at 0% 104%, #470B05ff 36.6%, #470B05d6 52.4%, #470B057f 68.3%, #470B0529 84.1%, #470B0500 100%), radial-gradient(68.55% 57.91% at 97.28% 75.21%, #B52A18fb 17.8%, #B52A18d3 38.3%, #B52A187d 58.9%, #B52A1828 79.4%, #B52A1800 100%), radial-gradient(58.78% 45.28% at 51.29% 53.67%, #EE7113dd 0.1%, #EE7113b9 25.1%, #EE71136e 50.0%, #EE711323 75.0%, #EE711300 100%), radial-gradient(44.45% 38.30% at 83.14% 13.98%, #FFD96A80 0.0%, #FFD96A6c 5.7%, #FFD96A40 37.2%, #FFD96A15 68.6%, #FFD96A00 100%), radial-gradient(81.15% 62.06% at 93.06% 8.61%, #F7BD23fe 27.4%, #F7BD23d6 45.5%, #F7BD237f 63.7%, #F7BD2329 81.8%, #F7BD2300 100%), radial-gradient(68.38% 53.64% at 8.29% 22.80%, #E89519f8 14.8%, #E89519d1 36.1%, #E895197c 57.4%, #E8951928 78.7%, #E8951900 100%); }
+
+/* A built-in recipe's photo (components/RecipeImage.tsx): it fills its shape, with a hairline
+   edge so a pale dish doesn't melt into a white cell. */
+.photo { width: 100%; height: auto; object-fit: cover; outline: 1px solid var(--art-line); outline-offset: -1px; }
 
 .feature {
   display: grid; gap: 32px; align-items: center;
@@ -200,7 +210,7 @@ mark.todo::after { content: "]"; }
 .menu .row { --inset: 56px; }
 
 .shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.shelf .cover { aspect-ratio: 1; border-radius: 18px; }
+.shelf .photo { aspect-ratio: 1; border-radius: 18px; }
 .shelf p { margin: 8px 2px 0; font: 600 0.875rem/1.25 var(--serif); }
 
 .plan .row { --inset: 136px; }
@@ -209,7 +219,6 @@ mark.todo::after { content: "]"; }
 .day b { font-size: 1.25rem; font-weight: 600; }
 .today small, .today b { color: var(--today); }
 .thumb { flex: none; width: 44px; aspect-ratio: 1; border-radius: 12px; }
-.thumb::after { background-size: 64px; }
 
 .list .row { --inset: 56px; }
 .check { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--ink-2); }
